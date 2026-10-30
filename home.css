@@ -1,0 +1,137 @@
+/* ===========================================================
+   HOME.CSS — beranda yang lebih lapang, kontras lebih tinggi,
+   sidebar seragam, pelajaran bacaan, tabel referensi.
+   Dimuat setelah style dasar dan lab.css.
+   =========================================================== */
+:root{
+  --text-soft:#4B5563;      /* kontras 7.5:1 pada putih (sebelumnya #6B7280) */
+  --border:#D9D2F5;
+  --track:#DDD6FE;
+}
+.muted{font-size:.9rem;color:var(--text-soft);line-height:1.6;}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar{width:236px;}
+.brand{font-size:.92rem;}
+.nav-item{font-size:.95rem;font-weight:600;color:#DAD7F7;padding:12px 14px;}
+.nav-item .ic{width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-item .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.sidebar-foot{font-size:.82rem;color:#C9C5F0;}
+@media (max-width:1000px){
+  .sidebar{width:100%;}
+  .nav-item{flex-direction:column;gap:4px;font-size:.78rem;padding:8px 14px;width:auto;white-space:nowrap;}
+}
+@media (max-width:560px){
+  .brand .bt{display:none;}
+  .nav-item{padding:8px 10px;}
+}
+
+/* ---------- BERANDA ---------- */
+.home-wrap{max-width:860px;margin:0 auto;}
+.hero2{text-align:center;padding:30px 0 26px;}
+.hero2 .eyebrow{font-size:.8rem;}
+.hero2 h1{font-size:2.05rem;line-height:1.25;color:var(--ink);max-width:700px;margin:0 auto 14px;}
+.hero2 p{font-size:1.05rem;line-height:1.65;color:var(--text-soft);max-width:620px;margin:0 auto 22px;}
+.hero2 .cta{display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:#fff;font-size:1rem;padding:15px 30px;border-radius:12px;box-shadow:0 6px 18px rgba(124,58,237,.28);}
+.hero2 .cta:hover{background:#6D28D9;}
+.hero2 .flow{margin-top:16px;font-size:.9rem;color:var(--text-soft);}
+.hero2 .flow b{color:var(--ink);}
+.hero2 .meta{margin-top:6px;font-size:.84rem;color:var(--text-soft);}
+
+.picker{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:6px 0 14px;}
+.picker label{font-weight:700;color:var(--ink);font-size:.95rem;}
+.picker select{flex:1;min-width:240px;font:600 .98rem 'Inter',sans-serif;color:var(--ink);padding:12px 40px 12px 14px;border:1.5px solid #A78BFA;border-radius:12px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%237C3AED' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 14px center;appearance:none;-webkit-appearance:none;cursor:pointer;}
+
+.bab-panel{background:var(--panel);border:1.5px solid var(--border);border-radius:18px;padding:26px 28px;min-height:420px;display:flex;flex-direction:column;}
+.bab-panel .bab-num{font-size:.8rem;}
+.bab-panel .bab-title{font-size:1.35rem;margin-bottom:6px;}
+.bab-panel .bab-desc{font-size:.98rem;color:var(--text-soft);line-height:1.6;margin-bottom:16px;}
+.track{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.track-bar{flex:1;height:12px;background:var(--track);border-radius:99px;overflow:hidden;}
+.track-fill{height:100%;background:var(--violet);border-radius:99px;min-width:0;transition:width .3s;}
+.track-fill.done{background:var(--ok);}
+.track-label{font-size:.9rem;font-weight:700;color:var(--ink);white-space:nowrap;}
+.bab-panel .lesson-list{gap:8px;margin-bottom:20px;}
+.bab-panel .lesson-row{font-size:.96rem;padding:12px 14px;background:#F5F3FF;border:1px solid #E4DEFB;gap:12px;}
+.bab-panel .lesson-row:hover{border-color:var(--violet);background:#EDE9FE;}
+.bab-panel .lesson-row .ls{width:30px;height:30px;font-size:.78rem;}
+.bab-panel .lesson-row .mode-chip{font-size:.78rem;font-weight:600;color:#4B5563;background:#fff;border:1px solid #DDD6FE;border-radius:999px;padding:3px 10px;}
+.bab-panel .lesson-row.next{border-color:var(--violet);box-shadow:inset 3px 0 0 var(--violet);}
+.quiz-box{margin-top:auto;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.quiz-box.open{background:#ECFDF5;border:1.5px solid #6EE7B7;}
+.quiz-box.locked{background:#F3F4F6;border:1.5px dashed #9CA3AF;}
+.quiz-box .qb-text{flex:1;min-width:200px;font-size:.92rem;line-height:1.5;color:#1F2937;}
+.quiz-box .qb-text b{display:block;font-size:.98rem;color:var(--ink);}
+.quiz-box .btn{padding:13px 24px;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;}
+.quiz-box.open .btn{background:var(--ok);color:#fff;}
+.quiz-box.open .btn:hover{background:#059669;}
+.quiz-box.locked .btn{background:#E5E7EB;color:#4B5563;border:1px solid #9CA3AF;}
+.quiz-box svg{flex-shrink:0;}
+
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;}
+.stat-strip .card{padding:16px 18px;text-align:center;}
+.stat-strip .stat-label{font-size:.85rem;color:var(--text-soft);}
+.stat-strip .stat-value{font-size:1.6rem;}
+.stat-strip .stat-note{font-size:.82rem;color:#047857;}
+.stat-card .stat-label{font-size:.85rem;}
+
+/* ---------- PELAJARAN BACAAN ---------- */
+.lab.reading{display:block;}
+.lab.reading .lab-right{display:none;}
+.lab.reading .lab-left{position:static;max-height:none;max-width:820px;margin:0 auto;padding:30px 34px;}
+.lab.reading .lp-teori{font-size:1rem;line-height:1.75;}
+.lab-left .lp-teori{font-size:.93rem;color:#1F2937;}
+.lab-left .callout{font-size:.9rem;}
+.lab-left .task{font-size:.9rem;}
+.lab-left h3{font-size:.82rem;}
+.lp-eyebrow{font-size:.78rem;}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:.92rem;}
+.tbl th{text-align:left;background:#EDE9FE;color:var(--ink);padding:9px 12px;font-size:.82rem;border-bottom:2px solid #C4B5FD;}
+.tbl td{padding:9px 12px;border-bottom:1px solid #E5E7EB;vertical-align:top;}
+.lp-teori ol{margin:0 0 10px 22px;} .lp-teori ol li{margin-bottom:4px;}
+.cek-q{background:#F5F3FF;border:1px solid #DDD6FE;border-radius:12px;padding:14px 16px;margin-bottom:12px;}
+.cek-q .cq-t{font-weight:700;color:var(--ink);font-size:.98rem;line-height:1.5;margin-bottom:10px;}
+.cek-q .cq-o{display:flex;flex-direction:column;gap:7px;}
+.cek-q .cq-opt{text-align:left;font:500 .93rem 'Inter',sans-serif;padding:10px 13px;border:1.5px solid #C4B5FD;border-radius:10px;background:#fff;cursor:pointer;color:#1F2937;}
+.cek-q .cq-opt:hover{border-color:var(--violet);}
+.cek-q .cq-opt.correct{border-color:var(--ok);background:#ECFDF5;font-weight:600;}
+.cek-q .cq-opt.incorrect{border-color:var(--bad);background:#FEF2F2;}
+.cek-q .cq-fb{font-size:.88rem;margin-top:9px;line-height:1.55;color:#374151;}
+.cek-done{background:#ECFDF5;border:1px solid #6EE7B7;border-radius:10px;padding:10px 14px;font-weight:600;color:#047857;font-size:.92rem;margin-bottom:8px;}
+
+/* ---------- KUIS TERKUNCI ---------- */
+.quiz-locked{background:var(--panel);border:1.5px dashed #9CA3AF;border-radius:var(--radius);padding:36px;text-align:center;max-width:560px;margin:0 auto;}
+.quiz-locked h2{color:var(--ink);font-size:1.3rem;margin:10px 0 8px;}
+.quiz-locked p{color:var(--text-soft);font-size:.95rem;line-height:1.6;margin-bottom:18px;}
+.materi-tab{font-size:.88rem;color:#374151;display:inline-flex;align-items:center;gap:6px;}
+.materi-tab.active{color:#fff;}
+.materi-tab .lk{display:inline-flex;}
+.materi-tab.locked:not(.active){color:#6B7280;background:#F3F4F6;}
+#nextBabBtn{margin-left:8px;}
+
+/* ---------- REFERENSI ---------- */
+.legend{display:flex;gap:18px;flex-wrap:wrap;padding:6px 12px 12px;font-size:.88rem;color:#1F2937;}
+.legend span{display:inline-flex;align-items:center;gap:8px;}
+.legend i{width:14px;height:14px;border-radius:4px;display:inline-block;}
+.legend .lg-ai{background:#EDE9FE;border:1.5px solid #7C3AED;}
+.legend .lg-as{background:#DBEAFE;border:1.5px solid #2563EB;}
+table.bridge{font-size:.93rem;}
+table.bridge th{font-size:.8rem;color:#1F2937;letter-spacing:.03em;}
+table.bridge th.h-ai{background:#EDE9FE;border-bottom-color:#7C3AED;}
+table.bridge th.h-as{background:#DBEAFE;border-bottom-color:#2563EB;color:#1E3A8A;}
+table.bridge td{padding:11px 12px;}
+table.bridge td.c-as{color:#1E3A8A;}
+table.bridge tr.grp td{background:#F5F3FF;font-weight:800;color:var(--ink);font-size:.86rem;letter-spacing:.02em;padding:9px 12px;border-top:1px solid #D9D2F5;}
+table.bridge code{font-size:.86em;color:#5B21B6;background:#F3F0FF;}
+.gl-search{width:100%;font:500 .95rem 'Inter',sans-serif;padding:11px 14px;border:1.5px solid #C4B5FD;border-radius:10px;margin-bottom:8px;}
+.glosarium-item dt{font-size:1rem;}
+.glosarium-item dd{font-size:.93rem;color:#374151;}
+.pustaka-list li{font-size:.93rem;}
+.nilai-grp td{background:#F5F3FF;font-weight:800;color:var(--ink);font-size:.86rem;}
+
+@media (max-width:1000px){
+  .stat-strip{grid-template-columns:1fr;}
+  .hero2 h1{font-size:1.6rem;}
+  .bab-panel{padding:20px 18px;min-height:0;}
+  .lab.reading .lab-left{padding:22px 18px;}
+}
