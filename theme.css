@@ -1,0 +1,152 @@
+/* ===========================================================
+   THEME.CSS — tema gelap (alternatif). Aktif bila
+   <html data-theme="dark">. Dimuat paling akhir.
+   =========================================================== */
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#EEEAFE; --violet:#B7A0FF; --violet-light:#2A2460; --bg:#0E0D1C; --panel:#17152E;
+  --text:#E6E7EE; --text-soft:#BBBECC; --border:#34305F; --track:#3B3571; --focus:#8DB8FF;
+  --ok:#34D399; --bad:#F87171;
+}
+[data-theme="dark"] body{background:var(--bg);color:var(--text);}
+[data-theme="dark"] a{color:#C4B5FD;}
+[data-theme="dark"] .sidebar{background:#0A0919;border-right:1px solid #211E45;}
+[data-theme="dark"] .skip-link{background:#7C3AED;}
+
+/* tombol */
+[data-theme="dark"] .btn-primary,[data-theme="dark"] .nav-item.active,[data-theme="dark"] .hero2 .cta{background:#7C3AED;color:#fff;}
+[data-theme="dark"] .btn-primary:hover,[data-theme="dark"] .hero2 .cta:hover{background:#6D28D9;}
+[data-theme="dark"] .btn-outline{background:var(--panel);color:var(--text);border-color:#4A4585;}
+[data-theme="dark"] .btn-outline:hover{border-color:#B7A0FF;color:#E9E2FF;}
+[data-theme="dark"] .btn-ok{background:#059669;}
+[data-theme="dark"] .btn-switch{color:#C4B5FD;}
+
+/* beranda */
+[data-theme="dark"] .hero2 .flow b,[data-theme="dark"] .picker label{color:var(--ink);}
+[data-theme="dark"] .picker select{background-color:#1D1A3B;color:#EEEAFE;border-color:#7C5CE0;}
+[data-theme="dark"] .picker select option{background:#1D1A3B;color:#EEEAFE;}
+[data-theme="dark"] .bab-panel{background:var(--panel);border-color:var(--border);}
+[data-theme="dark"] .bab-panel .lesson-row{background:#1F1C41;border-color:#34305F;color:var(--text);}
+[data-theme="dark"] .bab-panel .lesson-row:hover{background:#2A2560;border-color:#B7A0FF;}
+[data-theme="dark"] .bab-panel .lesson-row.next{border-color:#B7A0FF;box-shadow:inset 3px 0 0 #B7A0FF;}
+[data-theme="dark"] .lesson-row .ls{background:#17152E;border-color:#4A4585;color:#C4B5FD;}
+[data-theme="dark"] .lesson-row .ls.ok{background:#059669;border-color:#059669;color:#fff;}
+[data-theme="dark"] .bab-panel .lesson-row .mode-chip{background:#17152E;border-color:#4A4585;color:#CFCBE8;}
+[data-theme="dark"] .bab-badge{background:#064E3B;color:#6EE7B7;}
+[data-theme="dark"] .track-bar{background:#3B3571;}
+[data-theme="dark"] .quiz-box.open{background:#06382B;border-color:#10B981;}
+[data-theme="dark"] .quiz-box.locked{background:#1E1C36;border-color:#6B6A8C;}
+[data-theme="dark"] .quiz-box .qb-text{color:#E0E1EA;}
+[data-theme="dark"] .quiz-box .qb-text b{color:#fff;}
+[data-theme="dark"] .quiz-box.open .btn{background:#059669;}
+[data-theme="dark"] .quiz-box.locked .btn{background:#2A2750;color:#E0E1EA;border-color:#6B6A8C;}
+[data-theme="dark"] .quiz-box.locked > span{color:#BBBECC !important;}
+[data-theme="dark"] .stat-strip .stat-note,[data-theme="dark"] .stat-note{color:#6EE7B7;}
+[data-theme="dark"] #storageWarning{background:#3A2E0B;color:#FCD34D;border-color:#5C4A12;}
+
+/* tab dan kartu kuis */
+[data-theme="dark"] .materi-tab{background:var(--panel);color:#D5D7E4;border-color:var(--border);}
+[data-theme="dark"] .materi-tab.active{background:#7C3AED;color:#fff;border-color:#7C3AED;}
+[data-theme="dark"] .materi-tab.locked:not(.active){background:#1D1B36;color:#A3A6B8;}
+[data-theme="dark"] .bab-active-header{background:#241F52;}
+[data-theme="dark"] .bab-active-label{color:#C4B5FD;}
+[data-theme="dark"] .quiz-setup,[data-theme="dark"] .quiz-result,[data-theme="dark"] .question-card,[data-theme="dark"] .quiz-locked{background:var(--panel);border-color:var(--border);}
+[data-theme="dark"] .quiz-locked{border-color:#6B6A8C;}
+[data-theme="dark"] .quiz-locked svg{stroke:#BBBECC;}
+[data-theme="dark"] .option{background:#1D1A3B;color:var(--text);border-color:#3F3A78;}
+[data-theme="dark"] .option:hover{background:#26225A;border-color:#B7A0FF;}
+[data-theme="dark"] .option.correct{background:#06382B;border-color:#10B981;}
+[data-theme="dark"] .option.incorrect{background:#431A1F;border-color:#F87171;}
+[data-theme="dark"] .opt-letter{background:#2A2750;color:#D5D7E4;}
+[data-theme="dark"] .feedback.ok{background:#06382B;color:#86EFAC;}
+[data-theme="dark"] .feedback.bad{background:#431A1F;color:#FCA5A5;}
+[data-theme="dark"] .q-tag.c1{background:#1E3A5F;color:#93C5FD;} [data-theme="dark"] .q-tag.c2{background:#064E3B;color:#6EE7B7;}
+[data-theme="dark"] .q-tag.c3{background:#4A3507;color:#FCD34D;} [data-theme="dark"] .q-tag.c4{background:#4A1D3A;color:#F9A8D4;}
+[data-theme="dark"] .q-tag.ct{background:#2E2670;color:#C4B5FD;}
+[data-theme="dark"] .bloom-chip{background:#2A2460;color:#C4B5FD;}
+[data-theme="dark"] .ct-chip{background:#4A1D3A;color:#F9A8D4;}
+[data-theme="dark"] .breakdown-item{background:#1F1C41;}
+[data-theme="dark"] .breakdown-ct-item{background:#3A1A33;} [data-theme="dark"] .breakdown-ct-item .bd-lvl{color:#F9A8D4;}
+[data-theme="dark"] .quiz-progress-bar{background:#34305F;}
+
+/* nilai dan referensi */
+[data-theme="dark"] .badge-score.high{background:#064E3B;color:#6EE7B7;} [data-theme="dark"] .badge-score.mid{background:#4A3507;color:#FCD34D;} [data-theme="dark"] .badge-score.low{background:#4A1D22;color:#FCA5A5;}
+[data-theme="dark"] table.bridge td,[data-theme="dark"] table.history-table td{border-color:var(--border);}
+[data-theme="dark"] table.bridge th,[data-theme="dark"] table.history-table th{color:#D5D7E4;border-color:#4A4585;}
+[data-theme="dark"] table.bridge th.h-ai{background:#2A2460;border-bottom-color:#B7A0FF;color:#E9E2FF;}
+[data-theme="dark"] table.bridge th.h-as{background:#16304F;border-bottom-color:#60A5FA;color:#BFDBFE;}
+[data-theme="dark"] table.bridge td.c-as{color:#BFDBFE;}
+[data-theme="dark"] table.bridge tr.grp td,[data-theme="dark"] .nilai-grp td{background:#1F1C41;color:var(--ink);border-color:var(--border);}
+[data-theme="dark"] table.bridge code,[data-theme="dark"] .lp-teori code,[data-theme="dark"] .hint-box code{background:#26234A;color:#D4C8FF;}
+[data-theme="dark"] .legend{color:var(--text);}
+[data-theme="dark"] .legend .lg-ai{background:#2A2460;border-color:#B7A0FF;} [data-theme="dark"] .legend .lg-as{background:#16304F;border-color:#60A5FA;}
+[data-theme="dark"] .gl-search{background:#1D1A3B;color:var(--text);border-color:#4A4585;}
+[data-theme="dark"] .glosarium-item{border-color:var(--border);}
+[data-theme="dark"] .glosarium-item dd,[data-theme="dark"] .pustaka-list li{color:#D0D2DE;}
+
+/* panel pelajaran */
+[data-theme="dark"] .lp-teori,[data-theme="dark"] .lab-left .lp-teori{color:#D9DBE6;}
+[data-theme="dark"] .ct-tag{background:#4A1D3A;color:#F9A8D4;}
+[data-theme="dark"] .task{background:#1F1C41;}
+[data-theme="dark"] .task .ti{border-color:#6B5FC0;}
+[data-theme="dark"] .task.pass{background:#06382B;} [data-theme="dark"] .task.fail{background:#431A1F;}
+[data-theme="dark"] .hint-box{background:#3A2E0B;color:#FCD34D;border-color:#5C4A12;}
+[data-theme="dark"] .tbl th{background:#2A2460;color:#EEEAFE;border-bottom-color:#7C5CE0;}
+[data-theme="dark"] .tbl td{border-color:var(--border);}
+[data-theme="dark"] .cek-q{background:#1F1C41;border-color:#3F3A78;}
+[data-theme="dark"] .cek-q .cq-opt{background:#17152E;color:var(--text);border-color:#4A4585;}
+[data-theme="dark"] .cek-q .cq-opt:hover{border-color:#B7A0FF;}
+[data-theme="dark"] .cek-q .cq-opt.correct{background:#06382B;border-color:#10B981;}
+[data-theme="dark"] .cek-q .cq-opt.incorrect{background:#431A1F;border-color:#F87171;}
+[data-theme="dark"] .cek-q .cq-fb{color:#D9DBE6;}
+[data-theme="dark"] .cek-done{background:#06382B;border-color:#10B981;color:#86EFAC;}
+[data-theme="dark"] .studio{background:var(--panel);}
+
+/* kerangka App Inventor */
+[data-theme="dark"] .ai{--line:#3B3B48;--pink:#5B2A47;--gl:#3F5A2A;background:#1F1F27;color:#E4E4EC;}
+[data-theme="dark"] .ai-body{background:#1F1F27;}
+[data-theme="dark"] .ai-logo,[data-theme="dark"] .ai-menu,[data-theme="dark"] .ai-user,[data-theme="dark"] .ai-cat,[data-theme="dark"] .ai-tn,[data-theme="dark"] .ai-sbtn,[data-theme="dark"] .ai-psec .tri,[data-theme="dark"] .ai-colorsel select{color:#E4E4EC;}
+[data-theme="dark"] .ai-logo small,[data-theme="dark"] .ai-cat-off{color:#A4A8B6;}
+[data-theme="dark"] .ai-pi .ico,[data-theme="dark"] .ai-tn .ico{color:#CFD8DC;}
+[data-theme="dark"] .ai-menu:hover,[data-theme="dark"] .ai-tn:hover{background:#2D2D38;}
+[data-theme="dark"] .ai-pi:hover{background:#2C3A24;}
+[data-theme="dark"] .ai-sbtn{background:#2B2B35;}
+[data-theme="dark"] .ai-sel,[data-theme="dark"] .ai-in,[data-theme="dark"] .ai-search input{background:#2B2B35;color:#E4E4EC;border-color:#4A4A58;}
+[data-theme="dark"] .ai-seg .ed-tab.active{color:#2F3B25;}
+[data-theme="dark"] .ai-gbtn:disabled{background:#2F3B25;border-color:#46583A;color:#8FA07F;}
+[data-theme="dark"] .ai-colorsel .sw{border-color:#9AA0AE;}
+[data-theme="dark"] .ai-screen .empty{color:#8C8FA0;}
+[data-theme="dark"] .is-hidden{outline-color:#B0B4C2;}
+
+/* area blok */
+[data-theme="dark"] .bk-tree,[data-theme="dark"] .bk-emu{background:#1B1B23;}
+[data-theme="dark"] .bk-h{color:#EEF0F6;} [data-theme="dark"] .bk-grp{color:#9FB0BC;}
+[data-theme="dark"] .bk-tn{color:#E4E4EC;}
+[data-theme="dark"] .bk-tn:hover{background:#2B2B36;} [data-theme="dark"] .bk-tn.sel{background:#1F3A2A;}
+[data-theme="dark"] .bk-main{background:#16161D;}
+[data-theme="dark"] .bk-fly{background:#24242D;box-shadow:3px 0 12px rgba(0,0,0,.55);}
+[data-theme="dark"] .ws{background-color:#16161D;background-image:radial-gradient(#2C2C37 1px,transparent 1px);}
+[data-theme="dark"] .ws-hint{color:#9A9DAE;}
+[data-theme="dark"] .bk-warn{background:#24242D;border-color:#3B3B48;color:#E4E4EC;}
+[data-theme="dark"] .bk-zoom{background:#24242D;color:#E4E4EC;border-color:#4A4A58;}
+[data-theme="dark"] .bk-trash{background:#2B2B36;color:#B0BEC5;}
+[data-theme="dark"] .bk-emu-h{color:#E4E4EC;} [data-theme="dark"] .bk-emu-h .st{background:#2B2B36;color:#B0BEC5;}
+[data-theme="dark"] .bk-emu-h .st.on{background:#1F4A2B;color:#A7F3C0;}
+[data-theme="dark"] .bk-emu-cap{color:#9FB0BC;}
+[data-theme="dark"] .blk > svg.shape path{stroke:rgba(0,0,0,.6);}
+[data-theme="dark"] .slot-val > svg.shape path{fill:rgba(0,0,0,.42);stroke:rgba(0,0,0,.55);}
+[data-theme="dark"] .slot-val.sel,[data-theme="dark"] .slot-stmt.sel{outline-color:#60A5FA;}
+
+/* tombol tema pada sidebar */
+.theme-btn{display:flex;align-items:center;gap:12px;width:100%;padding:11px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:#DAD7F7;font:600 .9rem 'Inter',sans-serif;cursor:pointer;text-align:left;}
+.theme-btn:hover{background:rgba(255,255,255,.12);color:#fff;}
+.theme-btn .ic{width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.theme-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.theme-btn .i-sun{display:none;}
+[data-theme="dark"] .theme-btn .i-sun{display:block;} [data-theme="dark"] .theme-btn .i-moon{display:none;}
+@media (min-width:1001px){ .lab-mode .theme-btn{justify-content:center;padding:12px 0;} .lab-mode .theme-btn .tl{display:none;} }
+@media (max-width:1000px){ .theme-btn{width:auto;flex-direction:column;gap:4px;font-size:.78rem;padding:8px 14px;white-space:nowrap;} }
+@media (max-width:560px){ .theme-btn{padding:8px 10px;} }
+
+/* transisi halus saat ganti tema */
+.theme-anim,.theme-anim *{transition:background-color .25s,color .25s,border-color .25s !important;}

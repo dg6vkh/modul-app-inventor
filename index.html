@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem("ai_theme");if(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <title>Praktikum App Inventor — Pengantar sebelum Android Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -158,6 +159,8 @@
 </style>
 <link rel="stylesheet" href="lab.css">
 <link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="guide.css">
+<link rel="stylesheet" href="theme.css">
 </head>
 <body>
 <a href="#mainContent" class="skip-link">Lompat ke konten utama</a>
@@ -171,7 +174,9 @@
     <button class="nav-item" data-page="kuis" title="Kuis"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></svg></span><span class="nl">Kuis</span></button>
     <button class="nav-item" data-page="nilai" title="Nilai"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="nl">Nilai</span></button>
     <button class="nav-item" data-page="pustaka" title="Referensi"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M9 7h6"/></svg></span><span class="nl">Referensi</span></button>
+    <button class="nav-item" data-page="panduan" title="Panduan"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></svg></span><span class="nl">Panduan</span></button>
   </nav>
+  <button type="button" class="theme-btn" id="themeBtn" aria-pressed="false" title="Ganti tema"><span class="ic" aria-hidden="true"><svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></span><span class="tl" id="themeLabel">Tema gelap</span></button>
   <div class="sidebar-foot" id="sidebarFoot">Pilih pelajaran untuk mulai</div>
 </aside>
 
@@ -339,7 +344,119 @@
     <div class="card" id="latihanContainer"></div>
   </section>
 
-  <!-- ============ GLOSARIUM ============ -->
+  <!-- ============ PANDUAN ============ -->
+  <section class="page" id="page-panduan" aria-labelledby="panduanTitle">
+    <div class="guide-wrap">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Panduan Pengguna</div>
+          <div class="page-title" id="panduanTitle">Cara Menggunakan E-Modul</div>
+          <div class="page-sub">Ringkasan navigasi, alur belajar, dan penggunaan ruang kerja bergaya MIT App Inventor.</div>
+        </div>
+      </div>
+      <div class="guide-top">
+        <button class="btn btn-primary" id="tourStartBtn">▶ Mulai Tur Navigasi</button>
+        <label class="g-pref"><input type="checkbox" id="tourPrefChk"> Tampilkan tur setiap kali e-modul dibuka</label>
+      </div>
+      <nav class="guide-toc" aria-label="Daftar isi panduan">
+        <a href="#g-menu">1 · Menu</a><a href="#g-alur">2 · Alur belajar</a><a href="#g-kerja">3 · Ruang kerja</a><a href="#g-blok">4 · Bentuk blok</a><a href="#g-kuis">5 · Kuis dan nilai</a><a href="#g-tema">6 · Tema dan data</a><a href="#g-faq">7 · Masalah umum</a>
+      </nav>
+
+      <section class="g-sec card" id="g-menu">
+        <h2><span class="gn">1</span>Menu navigasi</h2>
+        <p>Menu berada di sisi kiri layar (pada ponsel, di bagian atas). Berikut fungsi tiap menu.</p>
+        <table class="g-menu">
+          <thead><tr><th>Menu</th><th>Fungsi</th></tr></thead>
+          <tbody>
+            <tr><td><span class="gi"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>Beranda</td><td>Memilih bab melalui daftar pilihan, melihat progres, dan melanjutkan pelajaran terakhir.</td></tr>
+            <tr><td><span class="gi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9l-3 3 3 3M16 9l3 3-3 3"/></svg></span>Praktik</td><td>Ruang belajar: instruksi di kiri, ruang kerja App Inventor di kanan, dengan pemeriksaan otomatis.</td></tr>
+            <tr><td><span class="gi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></svg></span>Kuis</td><td>Soal pilihan ganda per bab. Terbuka setelah semua pelajaran bab tersebut selesai.</td></tr>
+            <tr><td><span class="gi"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>Nilai</td><td>Riwayat skor kuis, rincian per komponen Computational Thinking, dan status latihan.</td></tr>
+            <tr><td><span class="gi"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M9 7h6"/></svg></span>Referensi</td><td>Tabel padanan App Inventor dan Android Studio, glosarium dengan pencarian, dan daftar pustaka.</td></tr>
+            <tr><td><span class="gi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></svg></span>Panduan</td><td>Halaman ini. Tur navigasi dapat dibuka kembali kapan saja.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="g-sec card" id="g-alur">
+        <h2><span class="gn">2</span>Alur belajar satu pelajaran</h2>
+        <div class="g-flow">
+          <div><b>1 · Baca</b>Pelajari teori singkat pada panel kiri.</div>
+          <div><b>2 · Susun</b>Atur komponen pada Designer atau rangkai blok pada Blocks.</div>
+          <div><b>3 · Jalankan</b>Tekan <code>▶ Jalankan</code> dan coba aplikasi pada ponsel simulasi.</div>
+          <div><b>4 · Periksa</b>Tekan <code>✓ Periksa Jawaban</code>; tiap tugas diberi tanda lulus atau belum.</div>
+        </div>
+        <ul>
+          <li><strong>Petunjuk</strong> terbuka bertahap, satu per satu, sehingga Anda dapat mencoba sendiri lebih dahulu.</li>
+          <li><strong>Lihat Solusi</strong> memuat jawaban contoh dan mengganti pekerjaan Anda pada pelajaran tersebut (ada konfirmasi).</li>
+          <li><strong>Atur Ulang</strong> mengembalikan pelajaran ke kondisi awal.</li>
+          <li>Pelajaran bertipe <strong>Bacaan</strong> diselesaikan dengan menjawab benar semua pertanyaan cek pemahaman.</li>
+          <li>Pekerjaan pada tiap pelajaran tersimpan otomatis pada peramban ini.</li>
+        </ul>
+      </section>
+
+      <section class="g-sec card" id="g-kerja">
+        <h2><span class="gn">3</span>Menggunakan ruang kerja</h2>
+        <p><strong>Designer</strong> (menyusun tampilan):</p>
+        <ul>
+          <li>Seret komponen dari <em>Palette</em> ke ponsel, atau klik komponen untuk menambahkannya.</li>
+          <li>Pilih komponen pada daftar <em>Components</em> atau langsung pada ponsel, lalu ubah nilainya pada panel <em>Properties</em>.</li>
+          <li>Komponen yang tidak diperlukan pada pelajaran tampak redup dan tidak dapat ditambahkan.</li>
+        </ul>
+        <p><strong>Blocks</strong> (menyusun logika):</p>
+        <ul>
+          <li>Klik kategori atau nama komponen pada daftar kiri; laci blok akan terbuka.</li>
+          <li>Seret blok ke area kerja, atau klik blok (atau tekan <code>Enter</code> saat blok terfokus) untuk menyisipkannya ke slot yang sedang dipilih.</li>
+          <li>Hapus blok dengan tombol <code>×</code> pada blok, atau seret ke ikon tempat sampah.</li>
+          <li>Tombol <code>+</code> dan <code>−</code> pada area kerja memperbesar atau memperkecil tampilan blok.</li>
+        </ul>
+      </section>
+
+      <section class="g-sec card" id="g-blok">
+        <h2><span class="gn">4</span>Mengenal bentuk blok</h2>
+        <p>Blok berbentuk potongan puzzle seperti pada App Inventor. Bentuknya menentukan sambungan yang mungkin: blok hanya menyambung bila bentuknya cocok.</p>
+        <div class="g-shapes">
+          <div class="g-demo" id="guideDemo" aria-label="Contoh bentuk blok"></div>
+          <ul class="g-legend">
+            <li><span><b>Topi melengkung</b>: blok event (<code>when …</code>). Menjadi awal sebuah rangkaian dan tidak dapat diletakkan di bawah blok lain.</span></li>
+            <li><span><b>Takik dan tonjolan</b> di atas dan bawah: blok perintah. Tonjolan bawah masuk ke takik atas blok berikutnya.</span></li>
+            <li><span><b>Colokan di kiri</b>: blok nilai (teks, angka, perbandingan). Colokan masuk ke soket pada blok lain.</span></li>
+            <li><span><b>Soket gelap</b>: tempat kosong untuk blok nilai. Soket yang masih kosong dihitung sebagai peringatan.</span></li>
+            <li><span><b>Bentuk huruf C</b>: blok yang memuat perintah di dalamnya (<code>if</code>, <code>repeat</code>, <code>while</code>).</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="g-sec card" id="g-kuis">
+        <h2><span class="gn">5</span>Kuis dan nilai</h2>
+        <ul>
+          <li>Kuis suatu bab <strong>terkunci</strong> sampai semua pelajaran bab itu selesai. Ikon gembok pada tab menandai bab yang masih terkunci.</li>
+          <li>Soal berjenjang C1 sampai C4 (Taksonomi Bloom) dan masing-masing terkait satu komponen Computational Thinking.</li>
+          <li>Pembahasan tampil setelah setiap jawaban. Kuis dapat diulang dan setiap percobaan tercatat pada menu Nilai.</li>
+        </ul>
+      </section>
+
+      <section class="g-sec card" id="g-tema">
+        <h2><span class="gn">6</span>Tema dan penyimpanan data</h2>
+        <ul>
+          <li>Tombol <strong>Tema gelap</strong> di bagian bawah menu mengganti tampilan terang dan gelap. Pilihan Anda diingat; bila belum memilih, tampilan mengikuti pengaturan perangkat.</li>
+          <li>Progres, riwayat kuis, dan pekerjaan praktik <strong>disimpan di peramban perangkat ini</strong>, tidak dikirim ke server dan tidak berpindah antarperangkat.</li>
+          <li>Menghapus data situs pada peramban, atau memakai jendela pribadi, dapat menghapus progres.</li>
+        </ul>
+      </section>
+
+      <section class="g-sec g-faq" id="g-faq">
+        <h2 style="margin-bottom:12px;"><span class="gn">7</span>Masalah umum</h2>
+        <details><summary>Tombol Periksa Jawaban menandai tugas belum lulus.</summary><p>Tekan <code>▶ Jalankan</code> dan coba aplikasinya. Perhatikan konsol di bawah ruang kerja: pesan peringatan (misalnya soket kosong) atau kesalahan program ditampilkan di sana. Gunakan Petunjuk bila perlu.</p></details>
+        <details><summary>Blok tidak mau menyambung.</summary><p>Periksa bentuknya: blok nilai hanya masuk ke soket nilai, dan blok perintah hanya masuk ke bagian <em>do</em>, <em>then</em>, atau <em>else</em>, atau ke bawah blok perintah lain.</p></details>
+        <details><summary>Kuis masih terkunci.</summary><p>Selesaikan semua pelajaran pada bab tersebut. Beranda dan halaman Kuis menampilkan pelajaran berikutnya yang perlu diselesaikan.</p></details>
+        <details><summary>Tampilan tidak rapi atau blok tidak muncul.</summary><p>Pastikan semua berkas modul berada dalam satu folder yang sama dengan <code>index.html</code>, lalu muat ulang halaman (<code>Ctrl+F5</code>).</p></details>
+        <details><summary>Progres hilang.</summary><p>Progres tersimpan pada peramban. Data hilang jika data situs dihapus atau jika memakai jendela pribadi. Gunakan peramban dan perangkat yang sama untuk melanjutkan.</p></details>
+      </section>
+    </div>
+  </section>
+
+<!-- ============ GLOSARIUM ============ -->
   <section class="page" id="page-pustaka" aria-labelledby="pustakaTitle">
     <div class="topbar">
       <div>
@@ -365,6 +482,29 @@
   </section>
 
 </main>
+
+
+<!-- ============ TUR NAVIGASI ============ -->
+<div class="tour-back" id="tour" hidden>
+  <div class="tour" role="dialog" aria-modal="true" aria-labelledby="tourTitle" aria-describedby="tourText">
+    <button type="button" class="tour-x" id="tourClose" aria-label="Tutup tur">×</button>
+    <div class="tour-art" id="tourArt" aria-hidden="true"></div>
+    <div class="tour-body">
+      <div class="tour-step" id="tourStep"></div>
+      <h2 id="tourTitle"></h2>
+      <div id="tourText"></div>
+    </div>
+    <div class="tour-dots" id="tourDots" role="group" aria-label="Langkah tur"></div>
+    <label class="tour-pref"><input type="checkbox" id="tourNever"> Jangan tampilkan tur ini lagi saat e-modul dibuka</label>
+    <div class="tour-nav">
+      <button type="button" class="btn btn-outline" id="tourSkip">Lewati</button>
+      <div class="grp">
+        <button type="button" class="btn btn-outline" id="tourPrev">← Sebelumnya</button>
+        <button type="button" class="btn btn-primary" id="tourNext">Berikutnya →</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="engine.js"></script>
 <script src="data.js"></script>

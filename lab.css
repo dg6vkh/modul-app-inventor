@@ -165,30 +165,36 @@
 .bk-emu .ai-status{height:22px;font-size:10px;}
 .bk-emu-cap{font-size:11px;color:#78909C;margin-top:10px;text-align:center;line-height:1.5;}
 
-/* ---------- Blok gaya Blockly ---------- */
-.blk{--bc:#999;background:var(--bc);color:#fff;font:600 12px/1.2 Arial,Helvetica,sans-serif;position:relative;border-radius:5px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25);}
-.blk-head{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:6px 10px;min-height:30px;}
+/* ---------- Blok berbentuk puzzle (gaya Blockly / App Inventor) ---------- */
+.blk{--bc:#999;color:#fff;font:600 13px/1.2 'Poppins',Arial,Helvetica,sans-serif;position:relative;isolation:isolate;}
+.blk > svg.shape,.slot-val > svg.shape{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;z-index:-1;pointer-events:none;}
+.blk > svg.shape path{fill:var(--bc);stroke:rgba(0,0,0,.42);stroke-width:1;stroke-linejoin:round;}
+.slot-val > svg.shape path{fill:rgba(0,0,0,.30);stroke:rgba(0,0,0,.35);stroke-width:1;}
+.blk-head{display:flex;align-items:center;flex-wrap:nowrap;white-space:nowrap;gap:7px;padding:7px 12px;min-height:34px;}
 .blk-comp{font-weight:700;}
-.blk-stmt,.blk-decl{display:block;margin:0 0 3px;}
-.blk-stmt::after,.blk-decl::after{content:"";position:absolute;left:14px;bottom:-4px;width:16px;height:4px;background:var(--bc);border-radius:0 0 3px 3px;}
-.blk-event{display:block;border-radius:14px 5px 5px 5px;margin:2px 0 4px;}
-.blk-value{display:inline-flex;border-radius:5px;margin-left:8px;vertical-align:middle;}
-.blk-value::before{content:"";position:absolute;left:-7px;top:50%;margin-top:-6px;width:8px;height:12px;background:var(--bc);border-radius:6px 0 0 6px;}
-.blk-value .blk-head{padding:3px 8px;min-height:24px;flex-wrap:nowrap;white-space:nowrap;}
-.stmt-row{display:flex;align-items:flex-start;padding:0 8px 8px 8px;}
-.stmt-label{min-width:34px;padding:8px 6px 0 2px;font-size:11px;font-weight:700;}
-.slot-stmt{flex:1;min-height:30px;padding:4px 4px 6px;background:#fff;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);cursor:pointer;min-width:120px;}
-.slot-stmt > .blk{margin-bottom:6px;}
-.slot-val{display:inline-flex;align-items:center;min-width:30px;min-height:22px;}
-.slot-val.empty{background:#fff;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.28);cursor:pointer;min-width:32px;}
-.slot-val.sel,.slot-stmt.sel{outline:3px solid #2563EB;outline-offset:1px;}
-.blk select,.blk input{background:#fff;color:#111;border:0;border-radius:3px;font:600 12px Arial,sans-serif;padding:2px 4px;max-width:170px;}
+.blk-gear{display:inline-flex;margin-left:-4px;flex-shrink:0;}
+.blk-stmt,.blk-decl{display:block;width:fit-content;margin:0;}
+.blk-event{display:block;width:fit-content;margin:16px 0 6px;}
+.blk-decl{margin:4px 0 6px;}
+.blk-value{display:inline-flex;margin-left:9px;vertical-align:middle;}
+.blk-value .blk-head{padding:3px 9px;min-height:26px;flex-wrap:nowrap;white-space:nowrap;}
+.stmt-row{display:flex;align-items:flex-start;padding:0 0 8px 8px;}
+.stmt-row:last-child{padding-bottom:10px;}
+.stmt-label{min-width:34px;padding:7px 8px 0 2px;font-size:12px;font-weight:600;}
+.slot-stmt{flex:1;min-height:30px;padding:0 0 5px;cursor:pointer;min-width:120px;}
+.slot-stmt > .blk{margin:0;}
+.slot-val{display:inline-flex;align-items:center;position:relative;min-width:30px;min-height:24px;}
+.slot-val.empty{cursor:pointer;min-width:36px;}
+.slot-val.sel,.slot-stmt.sel{outline:3px solid #2563EB;outline-offset:2px;border-radius:4px;}
+.blk select,.blk input{background:#fff;color:#111;border:0;border-radius:4px;font:600 12px 'Poppins',Arial,sans-serif;padding:2px 5px;max-width:170px;}
 .blk input[type=number]{width:62px;}
-.blk-del{border:none;background:rgba(0,0,0,.25);color:#fff;border-radius:50%;width:17px;height:17px;line-height:15px;font-size:11px;cursor:pointer;margin-left:auto;flex-shrink:0;padding:0;}
-.blk-del:hover{background:rgba(0,0,0,.5);}
+.blk-del{border:none;background:rgba(0,0,0,.28);color:#fff;border-radius:50%;width:17px;height:17px;line-height:15px;font-size:11px;cursor:pointer;margin-left:auto;flex-shrink:0;padding:0;}
+.blk-del:hover{background:rgba(0,0,0,.55);}
 .blk-preview{pointer-events:none;}
-.drawer-item{cursor:grab;display:block;}
+.drawer-item{cursor:grab;display:block;padding:2px 0 6px 10px;}
 .drop-before{box-shadow:0 -4px 0 #2563EB;} .drop-after{box-shadow:0 4px 0 #2563EB;}
+.slot-stmt.drop-hover{outline:3px dashed #2563EB;outline-offset:-2px;}
+.ws{padding-top:30px;}
 
 /* ---------- Responsif ---------- */
 @media (max-width:1250px){
